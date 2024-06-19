@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 80px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.logo {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+.navbar a {
+  font-size: 18px;
+  columns: white;
+  text-decoration: none;
+  margin-left: 50px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.bg-slider,
+.bg-slider .circle,
+.bg-slider .cirlce img,
+.circle-darktransp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.bg-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg-slider .circle {
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+.bg-slider.active .circle {
+  z-index: 10;
+}
+.bg-slider .circle.large,
+.circle-darktransp {
+  clip-path: circle(50% at 50% 50%);
+}
+.bg-slider .circle.small {
+  clip-path: circle(30% at 50% 50%);
+}
+.bg-slider.active .circle.small {
+  z-index: 12;
+}
+.bg-slider .circle img {
+  width: 100%;
+  transform: rotate(0deg) scale(2);
+  object-fit: cover;
+}
+
+.circle-darktransp {
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 11;
+}
+.bg-slider .content-text {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bg-slider.active .content-text {
+  z-index: 101;
+}
+.content-text .country,
+.content-text .place {
+  overflow: hidden;
+}
+.content-text .place h1,
+.content-text .country h2 {
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 1s;
+}
+
+.content-text .country {
+  margin-top: 60px;
+}
+.content-text .place h1 {
+  font-size: 60px;
+  letter-spacing: 80px;
+  margin-right: -80px;
+  transform: translateY(100%);
+}
+.content-text .country h2 {
+  transform: translateY(-100%);
+}
+.bg-slider.active .content-text .place h1,
+.bg-slider.active .content-text .country h2 {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.bg-slider.after-active .content-text .place h1 {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+.bg-slider.after-active .content-text .country h2 {
+  transform: translateY(100%);
+  opacity: 1;
+}
+.bg-slider.after-active {
+  background: rebeccapurple;
+}
+.content-text .country h2 {
+  font-size: 50px;
+  letter-spacing: 30px;
+  margin-right: -30px;
+}
+.line {
+  position: absolute;
+  top: 50.5%;
+  left: 50%;
+  width: 500px;
+  transform: translateX(-50%);
+  height: 2px;
+  background: white;
+  z-index: 100;
+}
+
+.rotate-btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 60px;
+  right: 60px;
+  background: #aba72c;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotate-btn i {
+  font-size: 40px;
+  color: #fff;
+}
