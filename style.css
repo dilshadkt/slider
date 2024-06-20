@@ -75,7 +75,7 @@
     opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .bg-slider.active .circle img {
-  transform: rotate(360deg) scale(2);
+  transform: rotate(360deg) scale(1.7);
   opacity: 1;
 }
 .bg-slider.after-active .circle img {
